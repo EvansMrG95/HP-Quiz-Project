@@ -8,15 +8,15 @@ body {
   }
   
 
-  /* Star element style */
+  
   .star {
     position: absolute;
     color: white;
     font-size: 12px;
     opacity: 0.8;
     animation: twinkle 2s infinite ease-in-out;
-    pointer-events: none;  /* ← This makes them unclickable */
-    z-index: 0;            /* ← Ensures stars stay behind content */
+    pointer-events: none;  
+    z-index: 0;            
   }
   
   @keyframes twinkle {
