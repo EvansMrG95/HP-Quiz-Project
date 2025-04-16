@@ -1,0 +1,50 @@
+body {
+    background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000 100%);
+    overflow: hidden;
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  /* Star element style */
+  .star {
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    opacity: 0.8;
+    animation: twinkle 2s infinite ease-in-out;
+    pointer-events: none;  /* ← This makes them unclickable */
+    z-index: 0;            /* ← Ensures stars stay behind content */
+  }
+  
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+  }
+
+  .magic-drop {
+    position: absolute;
+    top: 0;
+    width: 4px;
+    height: 10px;
+    background: linear-gradient(to bottom, #c084fc, #a855f7, transparent);
+    opacity: 0.9;
+    border-radius: 50%;
+    animation: fall 1s ease-out forwards;
+    pointer-events: none;
+    z-index: 50;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+  
