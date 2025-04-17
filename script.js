@@ -57,6 +57,12 @@ let score = 0;
 function startQuiz() {
   document.getElementById("welcome-screen").classList.add("hidden");
   document.getElementById("quiz-screen").classList.remove("hidden");
+  
+  
+  const music = document.getElementById("bg-music");
+  music.volume = 0.3;
+  music.play();
+
   showQuestion();
 }
 
@@ -111,7 +117,7 @@ function showResult() {
   const houseResult = document.getElementById("house-result");
 
   if (score >= 7) {
-    passMessage.textContent = "✅ Passed! You're a Wizard, Harry!";
+    passMessage.textContent = "Passed! You're a Wizard, Harry!";
     passMessage.classList.add("text-green-600");
 
     // Generate a random house
@@ -129,7 +135,7 @@ function showResult() {
   } else {
     passMessage.textContent = "❌ You Didn't Pass. Try Again!";
     passMessage.classList.add("text-red-600");
-    houseResult.textContent = ""; // Clear house result on fail
+    houseResult.textContent = "";
   }
 }
 
