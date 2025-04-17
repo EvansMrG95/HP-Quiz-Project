@@ -108,12 +108,28 @@ function showResult() {
   document.getElementById("final-score").textContent = score;
 
   const passMessage = document.getElementById("pass-message");
+  const houseResult = document.getElementById("house-result");
+
   if (score >= 7) {
-    passMessage.textContent = "Passed, You're a Wizard Harry!";
+    passMessage.textContent = "✅ Passed! You're a Wizard, Harry!";
     passMessage.classList.add("text-green-600");
+
+    // Generate a random house
+    const houses = [
+      { name: "Gryffindor", color: "text-red-600" },
+      { name: "Hufflepuff", color: "text-yellow-500" },
+      { name: "Ravenclaw", color: "text-blue-600" },
+      { name: "Slytherin", color: "text-green-700" }
+    ];
+
+    const chosen = houses[Math.floor(Math.random() * houses.length)];
+
+    houseResult.textContent = `The Sorting Hat has spoken... Welcome to ${chosen.name}!`;
+    houseResult.className = `text-xl mt-4 font-bold ${chosen.color}`;
   } else {
     passMessage.textContent = "❌ You Didn't Pass. Try Again!";
     passMessage.classList.add("text-red-600");
+    houseResult.textContent = ""; // Clear house result on fail
   }
 }
 
